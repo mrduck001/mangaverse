@@ -4,57 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mangaverse</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <h1>Mangaverse</h1>
-        </div>
-        <nav>
+    <!-- Navbar -->
+    <header>
+        <div class="logo">Mangaverse</div>
+        <nav class="navbar">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#latest">Latest</a></li>
-                <li><a href="#download-section">Download</a></li>
-                <li><a href="/login">Login</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="dark-mode-toggle">Toggle Dark Mode</button></li>
+                <li><button class="hamburger" onclick="toggleMenu()">☰</button></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Welcome to Mangaverse</h2>
-            <p>Your ultimate manga library.</p>
-            <a href="#latest" class="cta">Explore Manga</a>
-        </section>
+    <!-- Hamburger Menu -->
+    <div id="hamburger-menu" class="hamburger-menu">
+        <a href="#login" onclick="showLoginForm()">Log In</a>
+        <a href="#signup" onclick="showSignupForm()">Sign Up</a>
+    </div>
 
-        <section id="latest" class="manga-list">
-            <h3>Latest Manga</h3>
-            <div class="manga-grid">
-                <!-- فصل المانجا -->
-                <div class="manga-card">
-                    <img src="chapter1-thumbnail.jpg" alt="Chapter 1 Thumbnail">
-                    <h4>Chapter 1: The Beginning</h4>
-                    <button class="read-btn" onclick="viewChapter('1')">Read</button>
-                </div>
-            </div>
-        </section>
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to Mangaverse</h1>
+        <p>Your ultimate destination for manga</p>
+    </section>
 
-        <section id="download-section">
-            <h3>Download Chapters</h3>
-            <form id="download-form">
-                <label for="password">Enter Password:</label>
-                <input type="password" id="password" placeholder="Enter password">
-                <button type="button" id="download-btn">Access Download</button>
-            </form>
-            <div id="download-message"></div>
-        </section>
-    </main>
+    <!-- Sign Up Form -->
+    <section id="signup" class="form-section">
+        <h2>Sign Up</h2>
+        <form id="signup-form" onsubmit="return handleSignUp(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Mangaverse. All Rights Reserved.</p>
-    </footer>
+    <!-- Log In Form -->
+    <section id="login" class="form-section">
+        <h2>Log In</h2>
+        <form id="login-form" onsubmit="return handleLogin(event)">
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+    </section>
 
     <script src="script.js"></script>
 </body>
-</html>
+                </html>
