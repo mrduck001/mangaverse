@@ -1,26 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const downloadButton = document.getElementById("download-btn");
-    const passwordInput = document.getElementById("password");
-    const messageDiv = document.getElementById("download-message");
-
-    downloadButton.addEventListener("click", () => {
-        const password = passwordInput.value;
-        if (password === "seenf0192") {
-            // عرض صفحة التحميل
-            messageDiv.style.color = "green";
-            messageDiv.textContent = "Welcome, Developer!";
-            setTimeout(() => {
-                window.location.href = "/download-page.html"; // صفحة التحميل
-            }, 2000);
-        } else {
-            messageDiv.style.color = "red";
-            messageDiv.textContent = "Incorrect password.";
-        }
-    });
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+darkModeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 });
 
-// عرض الفصل
-function viewChapter(chapterNumber) {
-    alert(`You are now viewing Chapter ${chapterNumber}`);
-    // هنا تضيف صفحة عرض الفصل
+// Check for Dark Mode on page load
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+}
+
+// Hamburger Menu Toggle
+function toggleMenu() {
+    const menu = document.getElementById('hamburger-menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Handle Sign Up
+function handleSignUp(event) {
+    event.preventDefault();
+    alert('Sign Up successful');
+    // Add your Sign Up logic here
+}
+
+// Handle Log In
+function handleLogin(event) {
+    event.preventDefault();
+    alert('Log In successful');
+    // Add your Log In logic here
 }
