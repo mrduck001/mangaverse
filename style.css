@@ -1,0 +1,121 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #212529;
+    overflow-x: hidden;
+}
+
+header.navbar {
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header.navbar .logo h1 {
+    font-size: 2rem;
+    color: #e63946;
+}
+
+header.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header.navbar nav ul li a:hover {
+    background-color: #e63946;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #333, #555);
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero .cta {
+    padding: 1rem 2rem;
+    background-color: #e63946;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    animation: bounce 2s infinite;
+}
+
+.hero .cta:hover {
+    animation: none;
+}
+
+/* Manga Grid */
+.manga-list {
+    padding: 2rem;
+}
+
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.manga-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1rem;
+    transition: box-shadow 0.3s;
+}
+
+.manga-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.manga-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Download Section */
+#download-section {
+    text-align: center;
+    padding: 2rem;
+    background: #eee;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
